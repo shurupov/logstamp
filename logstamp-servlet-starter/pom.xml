@@ -7,73 +7,58 @@
     <artifactId>logstamp</artifactId>
     <version>0.0.1</version>
   </parent>
-
-  <artifactId>logstamp-core-starter</artifactId>
+  <artifactId>logstamp-servlet-starter</artifactId>
   <version>0.0.1</version>
-  <name>logstamp-core-starter</name>
-  <description>logstamp core</description>
-
-  <url>https://github.com/shurupov/logstamp</url>
-  <scm>
-    <url>git@github.com:shurupov/logstamp.git</url>
-    <connection>scm:git:git@github.com:shurupov/logstamp.git</connection>
-    <developerConnection>sscm:git:git@github.com:shurupov/logstamp.git</developerConnection>
-  </scm>
-
-  <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>https://opensource.org/licenses/MIT</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>Evgeny Shurupov</name>
-    </developer>
-  </developers>
+  <name>logstamp-servlet-starter</name>
+  <description>logstamp servlet</description>
 
   <dependencies>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
+      <groupId>io.github.shurupov.logstamp</groupId>
+      <artifactId>logstamp-core-starter</artifactId>
+      <version>0.0.1</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring-framework.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>${spring-framework.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
-      <version>${spring-boot.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
-      <version>${spring-boot.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
@@ -115,30 +100,6 @@
             <goals><goal>jar</goal></goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.central</groupId>
-        <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.9.0</version>
-        <extensions>true</extensions>
-        <configuration>
-          <publishingServerId>central</publishingServerId>
-          <deploymentName>${project.name}:${project.version}</deploymentName>
-        </configuration>
       </plugin>
     </plugins>
   </build>
