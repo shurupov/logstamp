@@ -7,10 +7,10 @@
     <artifactId>logstamp</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>logstamp-servlet-starter</artifactId>
+  <artifactId>logstamp-openfeign-starter</artifactId>
   <version>0.0.1</version>
-  <name>logstamp-servlet-starter</name>
-  <description>logstamp servlet</description>
+  <name>logstamp-openfeign-starter</name>
+  <description>logstamp openfeign</description>
 
   <dependencies>
     <dependency>
@@ -28,14 +28,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-core</artifactId>
-      <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-core</artifactId>
       <optional>true</optional>
     </dependency>
 

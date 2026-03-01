@@ -46,6 +46,7 @@
   <modules>
     <module>logstamp-core-starter</module>
     <module>logstamp-servlet-starter</module>
+    <module>logstamp-openfeign-starter</module>
   </modules>
 
 </project>

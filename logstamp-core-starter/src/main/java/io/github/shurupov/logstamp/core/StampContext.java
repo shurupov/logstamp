@@ -17,7 +17,7 @@ public class StampContext {
 
   private static final String INITIATOR_FIELD_NAME = "initiator";
 
-  @Value("stamplog.log-field-prefix:")
+  @Value("logstamp.log-field-prefix:")
   private final String stampLogFieldPrefix;
   private final ThreadLocal<Map<String, String>> context = new ThreadLocal<>();
   private final List<StampExtractor<?>> stampExtractors;
@@ -54,13 +54,13 @@ public class StampContext {
 
   public void addIdentifiers(Object event) {
     for (StampExtractor<?> extractor : stampExtractors) {
-      if (extractor.canExtract(event)) {
-        try {
+      try {
+        if (extractor.canExtract(event)) {
           Map<String, String> extracted = extractor.extract(event);
           add(extracted);
-        } catch (Exception e) {
-          log.warn("Failed to extract stamp", e);
         }
+      } catch (Exception e) {
+        log.warn("Failed to extract stamp", e);
       }
     }
   }
