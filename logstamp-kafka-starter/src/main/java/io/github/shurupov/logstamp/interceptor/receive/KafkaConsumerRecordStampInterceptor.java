@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class KafkaConsumerRecordIdContextInterceptor<K, V> implements RecordInterceptor<K, V> {
+public class KafkaConsumerRecordStampInterceptor<K, V> implements RecordInterceptor<K, V> {
 
   private final StampContext stampContext;
 
