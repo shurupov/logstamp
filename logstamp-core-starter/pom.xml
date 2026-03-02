@@ -2,23 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>io.github.shurupov.logstamp</groupId>
-    <artifactId>logstamp</artifactId>
-    <version>0.0.1</version>
-  </parent>
 
+  <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-core-starter</artifactId>
-  <version>0.0.1</version>
-  <name>${project.artifactId}</name>
+  <version>0.0.7</version>
+  <name>logstamp-core-starter</name>
   <description>logstamp core</description>
 
   <url>https://github.com/shurupov/logstamp</url>
   <scm>
-    <url>git@github.com:shurupov/logstamp.git</url>
+    <url>https://github.com/shurupov/logstamp</url>
     <connection>scm:git:git@github.com:shurupov/logstamp.git</connection>
-    <developerConnection>sscm:git:git@github.com:shurupov/logstamp.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:shurupov/logstamp.git</developerConnection>
   </scm>
+
+  <developers>
+    <developer>
+      <name>Evgeny Shurupov</name>
+      <email>bolteg86@ya.ru</email>  <!-- Обязательно! -->
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Your Organization Name</name>
+    <url>https://github.com/shurupov</url>
+  </organization>
 
   <licenses>
     <license>
@@ -28,11 +36,20 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <name>Evgeny Shurupov</name>
-    </developer>
-  </developers>
+  <properties>
+    <java.version>21</java.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+
+    <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+
+    <spring-boot.version>3.5.9</spring-boot.version>
+    <spring-cloud.version>2025.0.1</spring-cloud.version>
+
+    <spring-framework.version>6.2.15</spring-framework.version>
+    <lombok.version>1.18.42</lombok.version>
+    <slf4j.version>2.0.17</slf4j.version>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -83,11 +100,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <annotationProcessorPaths>
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>

@@ -7,15 +7,28 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.7</version>
   <name>logstamp</name>
   <description>Java-library lets add your stamps in process logs</description>
   <packaging>pom</packaging>
 
   <url>https://github.com/shurupov/logstamp</url>
-  <inceptionYear>2026</inceptionYear>
+  <scm>
+    <url>https://github.com/shurupov/logstamp</url>
+    <connection>scm:git:git@github.com:shurupov/logstamp.git</connection>
+    <developerConnection>scm:git:git@github.com:shurupov/logstamp.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Evgeny Shurupov</name>
+      <email>bolteg86@ya.ru</email>  <!-- Обязательно! -->
+    </developer>
+  </developers>
+
   <organization>
-    <name>No organization</name>
+    <name>Your Organization Name</name>
+    <url>https://github.com/shurupov</url>
   </organization>
 
   <licenses>
@@ -25,14 +38,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  <developers>
-    <developer>
-      <name>Evgeny Shurupov</name>
-      <email>bolteg86@ya.ru</email>
-      <organization>No org</organization>
-      <organizationUrl>https://www.linkedin.com/in/evgeny-shurupov/</organizationUrl>
-    </developer>
-  </developers>
 
   <properties>
     <java.version>21</java.version>
@@ -68,8 +73,8 @@
   <modules>
     <module>logstamp-core-starter</module>
     <module>logstamp-servlet-starter</module>
-    <module>logstamp-openfeign-starter</module>
-    <module>logstamp-kafka-starter</module>
+<!--    <module>logstamp-openfeign-starter</module>-->
+<!--    <module>logstamp-kafka-starter</module>-->
   </modules>
 
 </project>
