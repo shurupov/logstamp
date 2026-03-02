@@ -10,7 +10,7 @@
 
   <artifactId>logstamp-core-starter</artifactId>
   <version>0.0.1</version>
-  <name>logstamp-core-starter</name>
+  <name>${project.artifactId}</name>
   <description>logstamp core</description>
 
   <url>https://github.com/shurupov/logstamp</url>
