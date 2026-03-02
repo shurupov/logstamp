@@ -2,21 +2,61 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>io.github.shurupov.logstamp</groupId>
-    <artifactId>logstamp</artifactId>
-    <version>0.0.1</version>
-  </parent>
+
+  <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-openfeign-starter</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.7</version>
   <name>logstamp-openfeign-starter</name>
   <description>logstamp openfeign</description>
+
+  <url>https://github.com/shurupov/logstamp</url>
+  <scm>
+    <url>https://github.com/shurupov/logstamp</url>
+    <connection>scm:git:git@github.com:shurupov/logstamp.git</connection>
+    <developerConnection>scm:git:git@github.com:shurupov/logstamp.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Evgeny Shurupov</name>
+      <email>bolteg86@ya.ru</email>  <!-- Обязательно! -->
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Your Organization Name</name>
+    <url>https://github.com/shurupov</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <java.version>21</java.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+
+    <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+
+    <spring-boot.version>3.5.9</spring-boot.version>
+    <spring-cloud.version>2025.0.1</spring-cloud.version>
+    <openfeign.version>13.6</openfeign.version>
+
+    <spring-framework.version>6.2.15</spring-framework.version>
+    <lombok.version>1.18.42</lombok.version>
+    <slf4j.version>2.0.17</slf4j.version>
+  </properties>
 
   <dependencies>
     <dependency>
       <groupId>io.github.shurupov.logstamp</groupId>
       <artifactId>logstamp-core-starter</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.7</version>
       <optional>true</optional>
     </dependency>
 
@@ -30,36 +70,42 @@
     <dependency>
       <groupId>io.github.openfeign</groupId>
       <artifactId>feign-core</artifactId>
+      <version>${openfeign.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${spring-framework.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
+      <version>${spring-framework.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
+      <version>${spring-boot.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
+      <version>${spring-boot.version}</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
@@ -69,11 +115,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <annotationProcessorPaths>
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
@@ -101,6 +149,30 @@
             <goals><goal>jar</goal></goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.9.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <deploymentName>${project.name}:${project.version}</deploymentName>
+        </configuration>
       </plugin>
     </plugins>
   </build>
