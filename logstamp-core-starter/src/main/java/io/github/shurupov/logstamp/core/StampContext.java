@@ -17,7 +17,7 @@ public class StampContext {
 
   private static final String INITIATOR_FIELD_NAME = "initiator";
 
-  @Value("logstamp.log-field-prefix:")
+  @Value("${logstamp.log-field-prefix:}")
   private final String stampLogFieldPrefix;
   private final ThreadLocal<Map<String, String>> context = new ThreadLocal<>();
   private final List<StampExtractor<?>> stampExtractors;
