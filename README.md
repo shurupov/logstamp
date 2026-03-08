@@ -14,11 +14,11 @@ Interceptors are of two types: `receivers` and `transmitters`. `Receiver` handle
 
  - [Packages](#packages)
    - [logstamp-core-starter](#logstamp-core-starter)
+   - [logstamp-openfeign-starter](#logstamp-openfeign-starter)
 
 ## Packages
 
 ### logstamp-core-starter
-### logstamp-openfeign-starter
 
 Package contains:
 - [StampContext](logstamp-core-starter/src/main/java/io/github/shurupov/logstamp/core/StampContext.java)
