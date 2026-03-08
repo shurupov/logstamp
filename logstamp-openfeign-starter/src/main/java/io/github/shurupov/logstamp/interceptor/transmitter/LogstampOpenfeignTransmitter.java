@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class ContextFeignRequestInterceptor implements RequestInterceptor {
+public class LogstampOpenfeignTransmitter implements RequestInterceptor {
 
   @Value("${logstamp.http-header-name-prefix:x-stamp-}")
   private final String headerNamePrefix;

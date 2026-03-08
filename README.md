@@ -18,6 +18,7 @@ Interceptors are of two types: `receivers` and `transmitters`. `Receiver` handle
 ## Packages
 
 ### logstamp-core-starter
+### logstamp-openfeign-starter
 
 Package contains:
 - [StampContext](logstamp-core-starter/src/main/java/io/github/shurupov/logstamp/core/StampContext.java)
@@ -32,6 +33,21 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-core-starter</artifactId>
+  <version>0.0.9</version>
+</dependency>
+```
+
+### logstamp-openfeign-starter
+
+Package contains:
+- [LogstampOpenfeignTransmitter](logstamp-openfeign-starter/src/main/java/io/github/shurupov/logstamp/interceptor/transmitter/LogstampOpenfeignTransmitter.java) puts the stamps from context to http headers of every outcoming request
+
+To install add the following dependency to your project:
+
+```xml
+<dependency>
+  <groupId>io.github.shurupov.logstamp</groupId>
+  <artifactId>logstamp-openfeign-starter</artifactId>
   <version>0.0.9</version>
 </dependency>
 ```
