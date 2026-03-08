@@ -15,6 +15,8 @@ Interceptors are of two types: `receivers` and `transmitters`. `Receiver` handle
  - [Packages](#packages)
    - [logstamp-core-starter](#logstamp-core-starter)
    - [logstamp-openfeign-starter](#logstamp-openfeign-starter)
+   - [logstamp-servlet-starter](#logstamp-servlet-starter)
+   - [logstamp-kafka-starter](#logstamp-kafka-starter)
 
 ## Packages
 
@@ -48,6 +50,42 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-openfeign-starter</artifactId>
+  <version>0.0.9</version>
+</dependency>
+```
+
+### logstamp-servlet-starter
+
+Package contains:
+- [HttpRequestStampExtractor](logstamp-servlet-starter/src/main/java/io/github/shurupov/logstamp/extractor/HttpRequestStampExtractor.java) extends StampExtractor. Extracts from http-request
+- [DefaultHttpRequestStampExtractor](logstamp-servlet-starter/src/main/java/io/github/shurupov/logstamp/extractor/DefaultHttpRequestStampExtractor.java) implements HttpRequestStampExtractor. Extracts stamps from headers passed by [logstamp-openfeign-starter](#logstamp-openfeign-starter)
+- [ExtractStampReceiver](logstamp-servlet-starter/src/main/java/io/github/shurupov/logstamp/interceptor/receiver/ExtractStampReceiver.java) implements OncePerRequestFilter. Receiver that gets data from http request and passes it to all extractors including the previous.
+- Logic that passes context to async methods
+
+To install add the following dependency to your project:
+
+```xml
+<dependency>
+  <groupId>io.github.shurupov.logstamp</groupId>
+  <artifactId>logstamp-servlet-starter</artifactId>
+  <version>0.0.9</version>
+</dependency>
+```
+
+### logstamp-kafka-starter
+
+Package contains:
+- [KafkaConsumerStampExtractor](logstamp-kafka-starter/src/main/java/io/github/shurupov/logstamp/extractor/KafkaConsumerStampExtractor.java) extracts from headers of kafka incoming message consumed using `spring-kafka` package.
+- [KafkaStampReceiver](logstamp-kafka-starter/src/main/java/io/github/shurupov/logstamp/interceptor/receiver/KafkaStampReceiver.java) gets kafka message and passes to extractors.
+- [KafkaStampTransmitter](logstamp-kafka-starter/src/main/java/io/github/shurupov/logstamp/interceptor/transmitter/KafkaStampTransmitter.java) puts stamps from context to outcoming kafka message headers.
+
+
+To install add the following dependency to your project:
+
+```xml
+<dependency>
+  <groupId>io.github.shurupov.logstamp</groupId>
+  <artifactId>logstamp-kafka-starter</artifactId>
   <version>0.0.9</version>
 </dependency>
 ```
