@@ -17,6 +17,7 @@ Interceptors are of two types: `receivers` and `transmitters`. `Receiver` handle
    - [logstamp-openfeign-starter](#logstamp-openfeign-starter)
    - [logstamp-servlet-starter](#logstamp-servlet-starter)
    - [logstamp-kafka-starter](#logstamp-kafka-starter)
+ - [Usage examples](#usage-examples)
 
 ## Packages
 
@@ -89,3 +90,7 @@ To install add the following dependency to your project:
   <version>0.0.9</version>
 </dependency>
 ```
+
+## Usage examples
+
+- [logstamp example](https://github.com/shurupov/logstamp-example)
