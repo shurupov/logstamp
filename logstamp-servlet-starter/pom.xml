@@ -5,7 +5,7 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-servlet-starter</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.9</version>
   <name>logstamp-servlet-starter</name>
   <description>logstamp servlet</description>
 
@@ -57,7 +57,7 @@
     <dependency>
       <groupId>io.github.shurupov.logstamp</groupId>
       <artifactId>logstamp-core-starter</artifactId>
-      <version>0.0.7</version>
+      <version>0.0.9</version>
       <optional>true</optional>
     </dependency>
 
