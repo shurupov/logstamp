@@ -1,4 +1,4 @@
-package io.github.shurupov.logstamp.interceptor.pass;
+package io.github.shurupov.logstamp.interceptor.transmitter;
 
 import static io.github.shurupov.logstamp.core.StampConverter.camelToKebabCase;
 

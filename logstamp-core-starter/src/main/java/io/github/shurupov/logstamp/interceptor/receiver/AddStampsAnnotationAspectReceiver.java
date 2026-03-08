@@ -1,5 +1,6 @@
-package io.github.shurupov.logstamp.aspect;
+package io.github.shurupov.logstamp.interceptor.receiver;
 
+import io.github.shurupov.logstamp.aspect.AddStamps;
 import io.github.shurupov.logstamp.core.StampContext;
 import java.lang.reflect.Method;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class AddStampsAspect {
+public class AddStampsAnnotationAspectReceiver {
 
   private final StampContext stampContext;
 

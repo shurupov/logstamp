@@ -1,4 +1,4 @@
-package io.github.shurupov.logstamp.interceptor.receive;
+package io.github.shurupov.logstamp.interceptor.receiver;
 
 import io.github.shurupov.logstamp.core.StampContext;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class KafkaConsumerRecordStampInterceptor<K, V> implements RecordInterceptor<K, V> {
+public class KafkaStampReceiver<K, V> implements RecordInterceptor<K, V> {
 
   private final StampContext stampContext;
 

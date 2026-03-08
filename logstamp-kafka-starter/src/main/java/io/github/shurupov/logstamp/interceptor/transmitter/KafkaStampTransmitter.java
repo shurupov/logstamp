@@ -1,4 +1,4 @@
-package io.github.shurupov.logstamp.interceptor.pass;
+package io.github.shurupov.logstamp.interceptor.transmitter;
 
 import io.github.shurupov.logstamp.core.StampContext;
 import java.nio.charset.StandardCharsets;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class KafkaProducerStampInterceptor<K, V> implements ProducerInterceptor<K, V> {
+public class KafkaStampTransmitter<K, V> implements ProducerInterceptor<K, V> {
 
   private final StampContext stampContext;
 

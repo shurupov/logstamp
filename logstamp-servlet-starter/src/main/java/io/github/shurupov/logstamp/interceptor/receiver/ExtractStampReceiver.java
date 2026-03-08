@@ -1,4 +1,4 @@
-package io.github.shurupov.logstamp.interceptor.receive;
+package io.github.shurupov.logstamp.interceptor.receiver;
 
 import io.github.shurupov.logstamp.CachedBodyHttpServletRequest;
 import io.github.shurupov.logstamp.core.StampContext;
@@ -20,7 +20,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Component
 @WebFilter(filterName = "extractStampFilter", urlPatterns = "/*")
 @RequiredArgsConstructor
-public class ExtractStampFilter extends OncePerRequestFilter {
+public class ExtractStampReceiver extends OncePerRequestFilter {
 
   private final StampContext stampContext;
 
