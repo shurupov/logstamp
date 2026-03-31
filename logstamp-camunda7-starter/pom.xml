@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>io.github.shurupov.logstamp</groupId>
+  <artifactId>logstamp-camunda7-starter</artifactId>
+  <version>0.0.9</version>
+  <name>logstamp-camunda-starter</name>
+  <description>logstamp core</description>
+
+  <url>https://github.com/shurupov/logstamp</url>
+  <scm>
+    <url>https://github.com/shurupov/logstamp</url>
+    <connection>scm:git:git@github.com:shurupov/logstamp.git</connection>
+    <developerConnection>scm:git:git@github.com:shurupov/logstamp.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Evgeny Shurupov</name>
+      <email>bolteg86@ya.ru</email>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Your Organization Name</name>
+    <url>https://github.com/shurupov</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <java.version>21</java.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+
+    <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+
+    <spring-boot.version>3.5.9</spring-boot.version>
+    <camunda.version>7.24.0</camunda.version>
+
+    <spring-framework.version>6.2.15</spring-framework.version>
+    <lombok.version>1.18.42</lombok.version>
+    <slf4j.version>2.0.17</slf4j.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <version>${camunda.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>io.github.shurupov.logstamp</groupId>
+      <artifactId>logstamp-core-starter</artifactId>
+      <version>0.0.9</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.camunda.bpm.springboot</groupId>
+      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.38</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>-->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+      <!-- sources.jar generation -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals><goal>jar-no-fork</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- javadoc.jar generation -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals><goal>jar</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.9.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <deploymentName>${project.name}:${project.version}</deploymentName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
