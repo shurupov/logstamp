@@ -7,8 +7,8 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-camunda7-starter</artifactId>
-  <version>0.1.0</version>
-  <name>logstamp-camunda-starter</name>
+  <version>0.1.7</version>
+  <name>logstamp-camunda7-starter</name>
   <description>logstamp core</description>
 
   <url>https://github.com/shurupov/logstamp</url>
@@ -70,7 +70,7 @@
     <dependency>
       <groupId>io.github.shurupov.logstamp</groupId>
       <artifactId>logstamp-core-starter</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.7</version>
       <optional>true</optional>
     </dependency>
 
@@ -85,11 +85,6 @@
       <version>1.18.38</version>
       <scope>provided</scope>
     </dependency>
-
-    <!--<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>-->
   </dependencies>
 
   <build>
