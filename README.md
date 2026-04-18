@@ -17,6 +17,7 @@ Interceptors are of two types: `receivers` and `transmitters`. `Receiver` handle
    - [logstamp-openfeign-starter](#logstamp-openfeign-starter)
    - [logstamp-servlet-starter](#logstamp-servlet-starter)
    - [logstamp-kafka-starter](#logstamp-kafka-starter)
+   - [logstamp-camunda7-starter](#logstamp-camunda7-starter)
  - [Usage examples](#usage-examples)
 
 ## Packages
@@ -36,7 +37,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-core-starter</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 
@@ -51,7 +52,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-openfeign-starter</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 
@@ -69,7 +70,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-servlet-starter</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 
@@ -87,9 +88,28 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-kafka-starter</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
 </dependency>
 ```
+
+### logstamp-camunda7-starter
+
+Package contains:
+- [LogstampDelegateInterceptor](logstamp-camunda7-starter/src/main/java/io/github/shurupov/logstamp/camunda/delegate/LogstampDelegateInterceptor.java) extracts stamps if exist from camunda process variable and puts it to StampContext before delegate invocation. After delegate invocation puts stamp context to camunda process variable
+- [LogstampInterceptorPlugin](logstamp-camunda7-starter/src/main/java/io/github/shurupov/logstamp/camunda/plugin/LogstampInterceptorPlugin.java) adds LogstampDelegateInterceptor to camunda process pipeline 
+- [CamundaPluginConfig](logstamp-camunda7-starter/src/main/java/io/github/shurupov/logstamp/config/CamundaPluginConfig.java) adds LogstampInterceptorPlugin to spring context to make it work with camunda 
+
+To install add the following dependency to your project:
+
+```xml
+<dependency>
+  <groupId>io.github.shurupov.logstamp</groupId>
+  <artifactId>logstamp-camunda7-starter</artifactId>
+  <version>0.1.7</version>
+</dependency>
+```
+
+After it's added to you project make sure at least the first delegate is executed in the same thread where process started. You should set checkers in Asynchronous continuations property group of the delegate on bpmn schema. Otherwise, stamps should be lost and not saved to the process variable.  
 
 ## Usage examples
 

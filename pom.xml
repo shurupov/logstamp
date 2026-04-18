@@ -7,7 +7,7 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
   <name>logstamp</name>
   <description>Java-library lets add your stamps in process logs</description>
   <packaging>pom</packaging>
@@ -75,6 +75,7 @@
     <module>logstamp-servlet-starter</module>
     <module>logstamp-openfeign-starter</module>
     <module>logstamp-kafka-starter</module>
+    <module>logstamp-camunda7-starter</module>
   </modules>
 
 </project>

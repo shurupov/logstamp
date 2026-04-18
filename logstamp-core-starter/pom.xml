@@ -5,7 +5,7 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-core-starter</artifactId>
-  <version>0.0.9</version>
+  <version>0.1.7</version>
   <name>logstamp-core-starter</name>
   <description>logstamp core</description>
 
