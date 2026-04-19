@@ -109,7 +109,7 @@ To install add the following dependency to your project:
 </dependency>
 ```
 
-After it's added to you project make sure at least the first delegate is executed in the same thread where process started. You should set checkers in Asynchronous continuations property group of the delegate on bpmn schema. Otherwise, stamps should be lost and not saved to the process variable.  
+After it's added to you project make sure at least the first delegate is executed in the same thread where process started. You should not set checkers in Asynchronous continuations property group of the delegate on bpmn schema. Otherwise, stamps should be lost and not saved to the process variable to pass them further.  
 
 ## Usage examples
 
