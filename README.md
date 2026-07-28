@@ -114,3 +114,4 @@ After it's added to you project make sure at least the first delegate is execute
 ## Usage examples
 
 - [logstamp example](https://github.com/shurupov/logstamp-example)
+
