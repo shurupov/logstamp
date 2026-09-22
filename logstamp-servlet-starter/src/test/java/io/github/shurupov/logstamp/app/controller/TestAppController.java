@@ -1,11 +1,14 @@
 package io.github.shurupov.logstamp.app.controller;
 
+import java.io.IOException;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @Slf4j
@@ -18,8 +21,8 @@ public class TestAppController {
   }
 
   @PostMapping("/humans")
-  public AddHumanResponse addHuman() {
-    log.info("Adding human");
+  public AddHumanResponse addHuman(@RequestPart("file") MultipartFile file) throws IOException {
+    log.info("uploaded file: {}", new String(file.getBytes()));
     return new AddHumanResponse(1L);
   }
 

@@ -37,7 +37,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-core-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -52,7 +52,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-openfeign-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -70,7 +70,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-servlet-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -88,7 +88,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-kafka-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -105,7 +105,7 @@ To install add the following dependency to your project:
 <dependency>
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-camunda7-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
