@@ -1,6 +1,5 @@
 package io.github.shurupov.logstamp.interceptor.receiver;
 
-import io.github.shurupov.logstamp.CachedBodyHttpServletRequest;
 import io.github.shurupov.logstamp.core.StampContext;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -14,6 +13,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -28,7 +28,7 @@ public class ExtractStampReceiver extends OncePerRequestFilter {
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
 
-    CachedBodyHttpServletRequest requestWrapper = new CachedBodyHttpServletRequest(request);
+    ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper(request);
 
     stampContext.addInitiator("rest");
     stampContext.addIdentifiers(requestWrapper);
