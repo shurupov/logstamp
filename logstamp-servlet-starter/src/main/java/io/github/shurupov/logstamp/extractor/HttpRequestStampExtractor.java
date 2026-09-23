@@ -1,12 +1,12 @@
 package io.github.shurupov.logstamp.extractor;
 
 
-import io.github.shurupov.logstamp.CachedBodyHttpServletRequest;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
-public interface HttpRequestStampExtractor extends StampExtractor<CachedBodyHttpServletRequest> {
+public interface HttpRequestStampExtractor extends StampExtractor<ContentCachingRequestWrapper> {
 
   @Override
   default boolean canExtract(Object container) {
-    return container instanceof CachedBodyHttpServletRequest;
+    return container instanceof ContentCachingRequestWrapper;
   }
 }

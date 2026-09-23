@@ -5,7 +5,7 @@
 
   <groupId>io.github.shurupov.logstamp</groupId>
   <artifactId>logstamp-servlet-starter</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
   <name>logstamp-servlet-starter</name>
   <description>logstamp servlet</description>
 
@@ -57,7 +57,7 @@
     <dependency>
       <groupId>io.github.shurupov.logstamp</groupId>
       <artifactId>logstamp-core-starter</artifactId>
-      <version>0.1.7</version>
+      <version>1.0.0</version>
       <optional>true</optional>
     </dependency>
 
@@ -115,6 +115,20 @@
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring-boot.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring-boot.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
